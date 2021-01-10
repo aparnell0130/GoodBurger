@@ -1,23 +1,36 @@
-<h2>burgers</h2>
-<ul>
-    {{#each burger}}
-    {{#unless devoured}}
-    <li>
-        <p>{{id}}</p>
-        <p>{{burger_name}}</p>
-        <button>Devour</button>
-    </li>
-    {{/unless}}
-    {{/each}}
-</ul>
+<h2>Burgers</h2>
+<div class="d-flex">
+    <div>
+        <ul>
+            {{#each burger}}
+            {{#unless devoured}}
+            <li>
+                <p>{{id}}</p>
+                <p>{{burger_name}}</p>
+                <button>Devour</button>
+            </li>
+            {{/unless}}
+            {{/each}}
+        </ul>
+    </div>
 
-<ul>
-    {{#each burger}}
-    {{#if devoured}}
-    <li>
-        <p>{{id}}</p>
-        <p>{{burger_name}}</p>
-    </li>
-    {{/if}}
-    {{/each}}
-</ul>
+    <div>
+        <ul>
+            {{#each burger}}
+            {{#if devoured}}
+            <li>
+                <p>{{id}}</p>
+                <p>{{burger_name}}</p>
+            </li>
+            {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+</div>
+<div>
+    <form action="/" method="POST">
+        <textarea type="text" name="burger"></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
