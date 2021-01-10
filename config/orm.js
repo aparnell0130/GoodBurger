@@ -11,7 +11,7 @@ const orm = {
         })
     },
     create: (tableInput, cols, vals, cb) => {
-        const queryString = `INSERT INTO ${tableInput} (${cols.toString()}) VALUES (?,?)`
+        const queryString = `INSERT INTO ${tableInput} (${cols.toString()}) VALUES (?)`
         connection.query(queryString, vals, (err, data) => {
             if (err) {
                 throw err

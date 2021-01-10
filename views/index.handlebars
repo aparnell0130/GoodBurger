@@ -34,9 +34,9 @@
         </div>
     </div>
     <div>
-        <form action="/" method="POST">
+        <form id="burgerForm">
             <div>
-                <textarea type="text" name="burger"></textarea>
+                <textarea id="burgerText" type="text" name="burger"></textarea>
 
 
             </div>
@@ -44,3 +44,19 @@
         </form>
     </div>
 </div>
+
+<script>
+    $('#burgerForm').on('submit', (event) => {
+        event.preventDefault()
+        const newBurger = { burger_name: $('#burgerText').val().trim() }
+        console.log(newBurger)
+        $.ajax('/api/burgers', {
+            type: 'POST',
+            data: newBurger
+        })
+            .then(function () {
+                console.log('created new burger')
+                location.reload()
+            })
+    })
+</script>
