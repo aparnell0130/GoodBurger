@@ -5,6 +5,11 @@ var burger = {
         orm.all('burgers', (data) => {
             cb(data)
         })
+    },
+    create: (cols, vals, cb) => {
+        orm.create('burgers', cols, vals, (data) => {
+            cb(data)
+        })
     }
 }
 

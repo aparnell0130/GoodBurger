@@ -9,6 +9,15 @@ const orm = {
             }
             cb(data);
         })
+    },
+    create: (tableInput, cols, vals, cb) => {
+        const queryString = `INSERT INTO ${tableInput} (${cols.toString()}) VALUES (?,?)`
+        connection.query(queryString, vals, (err, data) => {
+            if (err) {
+                throw err
+            }
+            cb(data)
+        })
     }
 }
 
