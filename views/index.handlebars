@@ -1,11 +1,23 @@
 <h2>burgers</h2>
 <ul>
     {{#each burger}}
+    {{#unless devoured}}
+    <li>
+        <p>{{id}}</p>
+        <p>{{burger_name}}</p>
+        <button>Devour</button>
+    </li>
+    {{/unless}}
+    {{/each}}
+</ul>
 
+<ul>
+    {{#each burger}}
+    {{#if devoured}}
     <li>
         <p>{{id}}</p>
         <p>{{burger_name}}</p>
     </li>
-
+    {{/if}}
     {{/each}}
 </ul>
