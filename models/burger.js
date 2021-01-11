@@ -10,6 +10,11 @@ var burger = {
         orm.create('burgers', cols, vals, (data) => {
             cb(data)
         })
+    },
+    update: (cols, vals, cb) => {
+        orm.updateI('burger', cols, vals, (data) => {
+            cb(data)
+        })
     }
 }
 
