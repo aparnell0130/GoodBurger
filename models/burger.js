@@ -11,8 +11,8 @@ var burger = {
             cb(data)
         })
     },
-    update: (cols, vals, cb) => {
-        orm.updateI('burger', cols, vals, (data) => {
+    update: (cols, vals, condition, cb) => {
+        orm.update('burgers', cols, vals, condition, (data) => {
             cb(data)
         })
     }
