@@ -18,6 +18,16 @@ const orm = {
             }
             cb(data)
         })
+    },
+    update: (tableInput, cols, vals, condition, cb) => {
+        const queryString = `UPDATE ${tableInput} SET ${cols} = ${vals} WHERE ${condition}`
+        console.log(queryString)
+        connection.query(queryString, (err, data) => {
+            if (err) {
+                throw err
+            }
+            cb(data)
+        })
     }
 }
 
