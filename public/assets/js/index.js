@@ -13,9 +13,10 @@ $(function () {
                 location.reload()
             })
     })
-    $('#eat').on('click', function (event) {
+    $('.eat').on('click', function (event) {
         const id = $(this).data('id')
         const eaten = $(this).data('eaten')
+        console.log(eaten)
         const ate = {
             devoured: eaten
         }
