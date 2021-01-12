@@ -16,6 +16,7 @@ $(function () {
                 location.reload()
             })
     })
+
     $('.eat').on('click', function (event) {
         const id = $(this).data('id')
         const eaten = $(this).data('eaten')
@@ -24,7 +25,7 @@ $(function () {
             devoured: eaten
         }
         console.log(ate, id)
-        $.ajax('api/burgers/' + id, {
+        $.ajax('/api/burgers/' + id, {
             type: 'PUT',
             data: ate
         })
@@ -34,4 +35,15 @@ $(function () {
             })
     })
 
+    $('.trash').on('click', function (event) {
+        const id = $(this).data('id')
+        console.log(id)
+        $.ajax('/api/burgers/' + id, {
+            type: 'DELETE'
+        })
+            .then(function () {
+                console.log('deleted burger with id = ', id)
+                location.reload()
+            })
+    })
 })
