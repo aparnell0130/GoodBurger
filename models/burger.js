@@ -15,6 +15,11 @@ var burger = {
         orm.update('burgers', cols, vals, condition, (data) => {
             cb(data)
         })
+    },
+    delete: (condition, cb) => {
+        orm.delete('burgers', condition, (data) => {
+            cb(data)
+        })
     }
 }
 
