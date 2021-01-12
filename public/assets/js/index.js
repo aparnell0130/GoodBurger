@@ -3,6 +3,9 @@ $(function () {
     $('#burgerForm').on('submit', (event) => {
         event.preventDefault()
         const newBurger = { burger_name: $('#burgerText').val().trim() }
+        if (newBurger.burger_name === '') {
+            return;
+        }
         console.log(newBurger)
         $.ajax('/api/burgers', {
             type: 'POST',
