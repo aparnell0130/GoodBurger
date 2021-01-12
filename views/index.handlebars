@@ -27,10 +27,15 @@
             <ul class="list-group ">
                 {{#each burger}}
                 {{#if devoured}}
-                <li class="list-group-item d-flex w-100 rounded">
-                    <p>{{id}}.) </p>
-                    <p>{{burger_name}}</p>
-                </li>
+                <div class="d-flex">
+                    <li class="list-group-item d-flex w-100 justify-content-between rounded">
+                        <div class="d-flex">
+                            <p>{{id}}.) </p>
+                            <p>{{burger_name}}</p>
+                        </div>
+                        <button class="trash btn btn-danger ml-3" data-id="{{id}}">Remove</button>
+                    </li>
+                </div>
                 {{/if}}
                 {{/each}}
             </ul>

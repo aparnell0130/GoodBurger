@@ -28,6 +28,16 @@ const orm = {
             }
             cb(data)
         })
+    },
+    delete: (tableInput, condition, cb) => {
+        const queryString = `DELETE FROM ${tableInput} WHERE ${condition}`
+
+        connection.query(queryString, (err, data) => {
+            if (err) {
+                throw err
+            }
+            cb(data)
+        })
     }
 }
 
