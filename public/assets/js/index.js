@@ -1,5 +1,5 @@
 $(function () {
-
+    // submit user input request server to post data
     $('#burgerForm').on('submit', (event) => {
         event.preventDefault()
         const newBurger = { burger_name: $('#burgerText').val().trim() }
@@ -16,7 +16,7 @@ $(function () {
                 location.reload()
             })
     })
-
+    // click button request server to update devour to true
     $('.eat').on('click', function (event) {
         const id = $(this).data('id')
         const eaten = $(this).data('eaten')
@@ -34,7 +34,7 @@ $(function () {
                 location.reload()
             })
     })
-
+    // click button request server to delete data
     $('.trash').on('click', function (event) {
         const id = $(this).data('id')
         console.log(id)
